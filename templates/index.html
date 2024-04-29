@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="centr">
+<table class="table__">
+        {% for item in products%}
+
+            <th>
+                <div class="block">
+                    <a href="/product/{{ item.id }}">
+                        <div class="rasp">
+                                <img class="img_t" src="{{ url_for('static', filename='img/products/' + item.img_prod) }}">
+                                <h2>{{ item.name }}</h2>
+                                <div>
+                                    Описание: {{item.description}}
+                                </div>
+                        </div>
+                    </a>
+            </div>
+            </th>
+        {% if item.id % 4 == 0 %}
+            <tr>
+            </tr>
+        {% endif %}
+        {% endfor %}
+</table>
+</div>
+{% endblock %}

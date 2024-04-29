@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="login">
+    <h2>{{ user.name }} {{ user.surname }} {{ user.last_name }}</h2>
+    <div class="avatar">
+        <img src="{{ url_for('static', filename='img/users/' + user.img_prof) }}" alt="Avatar">
+    </div>
+    <a class="btn btn-dark rasp_btn_out btn_size roboto-medium" href="/product">Добавить товар</a>
+    <a class="btn btn-dark rasp_btn_out btn_size roboto-medium" href="/logout">Выйти</a>
+</div>
+{% endblock %}
